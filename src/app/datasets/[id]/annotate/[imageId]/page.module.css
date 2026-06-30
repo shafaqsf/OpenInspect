@@ -1,0 +1,51 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  padding: 32px 40px;
+}
+
+.topBar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.topBar h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.backLink {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.imageInfo {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.noLabels {
+  text-align: center;
+  padding: 60px;
+  color: var(--color-text-muted);
+}
+
+.link {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.error {
+  color: var(--color-accent);
+  text-align: center;
+  padding: 40px;
+}

@@ -17,3 +17,33 @@
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.actionCard {
+  display: block;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 24px;
+  transition: box-shadow 0.15s;
+}
+
+.actionCard:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.actionCard h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.actionCard p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

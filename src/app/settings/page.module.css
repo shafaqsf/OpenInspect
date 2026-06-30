@@ -1,0 +1,81 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  padding: 32px 40px;
+  max-width: 700px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sectionDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.sectionDesc code {
+  font-size: 0.8rem;
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.envList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.envRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.envInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.envKey {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.envDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.copyBtn {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background: transparent;
+  cursor: pointer;
+}
