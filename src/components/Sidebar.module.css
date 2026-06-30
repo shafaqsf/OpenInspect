@@ -58,3 +58,27 @@
   color: #ffffff;
   font-weight: 600;
 }
+
+.plannedSection {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.plannedHeader {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0 20px 8px;
+}
+
+.plannedLink {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.plannedLink:hover {
+  color: rgba(255, 255, 255, 0.7);
+}

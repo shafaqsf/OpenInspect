@@ -10,7 +10,7 @@
 }
 
 .topBar {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .topBar h1 {
@@ -20,16 +20,18 @@
 
 .quickActions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
 .actionCard {
   display: block;
+  padding: 18px;
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  padding: 24px;
+  text-align: center;
   transition: box-shadow 0.15s;
 }
 
@@ -38,12 +40,93 @@
 }
 
 .actionCard h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.loading, .empty {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  padding: 20px 0;
+}
+
+.empty {
+  text-align: center;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.summaryCard {
+  padding: 16px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.summaryCard h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
   margin-bottom: 6px;
 }
 
-.actionCard p {
+.summaryValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.readiness {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.readinessGroup h3 {
   font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.readinessRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.85rem;
+}
+
+.readinessRow code {
+  font-size: 0.8rem;
+}
+
+.readinessStatus {
   color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.ok {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.fail {
+  color: var(--color-accent);
+  font-weight: 700;
 }

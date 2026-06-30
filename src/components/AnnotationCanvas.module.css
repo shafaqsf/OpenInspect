@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 220px;
+  grid-template-columns: 1fr 240px;
   gap: 16px;
   align-items: start;
 }
@@ -20,14 +20,16 @@
 .toolGroup {
   display: flex;
   gap: 4px;
+  flex-wrap: wrap;
 }
 
 .toolBtn {
-  width: 34px;
-  height: 34px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 2px;
+  width: 40px;
+  padding: 4px 0;
   border: 1px solid var(--color-border);
   border-radius: 6px;
   background: transparent;
@@ -46,8 +48,14 @@
   border-color: var(--color-sidebar-active);
 }
 
-.toolActive:hover {
-  background: var(--color-sidebar-active);
+.toolIcon {
+  font-size: 0.9rem;
+}
+
+.toolKey {
+  font-size: 0.6rem;
+  font-weight: 700;
+  opacity: 0.6;
 }
 
 .labelGroup {
@@ -73,8 +81,8 @@
   font-size: 0.75rem;
   background: transparent;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
   white-space: nowrap;
+  transition: border-color 0.15s;
 }
 
 .labelBtn:hover {
@@ -91,13 +99,22 @@
   border-radius: 50%;
 }
 
-.zoomGroup {
+.rightGroup {
   display: flex;
+  align-items: center;
   gap: 4px;
   margin-left: auto;
 }
 
-.zoomBtn {
+.saveStatus {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 8px;
+}
+
+.rightGroup button {
   width: 30px;
   height: 30px;
   display: flex;
@@ -110,8 +127,23 @@
   font-size: 0.85rem;
 }
 
-.zoomBtn:hover {
-  background: #f0f0f0;
+.metaInputs {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+}
+
+.metaInput {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.metaInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
 }
 
 .hint {
@@ -147,6 +179,8 @@
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 16px;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .sidebar h3 {
@@ -157,11 +191,14 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.sidebar h3:not(:first-child) {
+  margin-top: 16px;
+}
+
 .annList {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 16px;
 }
 
 .annItem {
@@ -199,6 +236,9 @@
 
 .annLabel {
   flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .annDelete {
@@ -232,4 +272,29 @@
   font-size: 0.8rem;
   color: var(--color-text-muted);
   padding: 6px 8px;
+}
+
+.shortcutList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.shortcutRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  padding: 2px 0;
+}
+
+.shortcutRow code {
+  display: inline-block;
+  width: 28px;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  font-weight: 600;
 }

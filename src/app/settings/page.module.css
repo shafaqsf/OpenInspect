@@ -23,59 +23,63 @@
 .section h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
-.sectionDesc {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin-bottom: 12px;
-}
-
-.sectionDesc code {
-  font-size: 0.8rem;
-  background: #f0f0f0;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.envList {
+.list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-.envRow {
+.row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
+  gap: 8px;
+  padding: 8px 12px;
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-}
-
-.envInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.envKey {
+  border-radius: 6px;
   font-size: 0.85rem;
-  font-weight: 600;
 }
 
-.envDesc {
-  font-size: 0.75rem;
+.status {
+  margin-left: auto;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
 }
 
-.copyBtn {
-  padding: 6px 14px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
+.ok {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.fail {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.hint {
   font-size: 0.75rem;
-  background: transparent;
-  cursor: pointer;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+.defaults {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.defaults label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.defaults select {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.85rem;
 }

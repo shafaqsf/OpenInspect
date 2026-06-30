@@ -10,6 +10,14 @@ const links = [
   { href: '/settings', label: 'Settings' },
 ]
 
+const plannedLinks = [
+  { href: '/training', label: 'Training' },
+  { href: '/models', label: 'Models' },
+  { href: '/inspection', label: 'Inspection' },
+  { href: '/monitoring', label: 'Monitoring' },
+  { href: '/reports', label: 'Reports' },
+]
+
 export default function Sidebar() {
   const pathname = usePathname()
 
@@ -24,15 +32,20 @@ export default function Sidebar() {
         {links.map((link) => {
           const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
           return (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${styles.link} ${isActive ? styles.active : ''}`}
-            >
+            <Link key={link.href} href={link.href} className={`${styles.link} ${isActive ? styles.active : ''}`}>
               {link.label}
             </Link>
           )
         })}
+
+        <div className={styles.plannedSection}>
+          <p className={styles.plannedHeader}>Planned</p>
+          {plannedLinks.map((link) => (
+            <Link key={link.href} href={link.href} className={`${styles.link} ${styles.plannedLink}`}>
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </nav>
     </aside>
   )
