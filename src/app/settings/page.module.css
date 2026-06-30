@@ -6,24 +6,27 @@
 .main {
   margin-left: var(--sidebar-width);
   flex: 1;
-  padding: 32px 40px;
-  max-width: 700px;
+  padding: 40px 48px;
+  max-width: 720px;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
 }
 
 .section {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .section h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
 }
 
 .list {
@@ -35,51 +38,80 @@
 .row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: 10px;
+  padding: 10px 14px;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   font-size: 0.85rem;
+}
+
+.row code {
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 }
 
 .status {
   margin-left: auto;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 .ok {
-  color: #27ae60;
+  color: var(--color-success);
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .fail {
-  color: var(--color-accent);
+  color: var(--color-danger);
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .hint {
   font-size: 0.75rem;
-  color: var(--color-text-muted);
-  margin-top: 8px;
+  color: var(--color-text-faint);
+  margin-top: 10px;
 }
 
 .defaults {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+  padding: 20px 22px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
 }
 
 .defaults label {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+}
+
+.defaults label span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
 }
 
 .defaults select {
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   font-size: 0.85rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.defaults select:focus {
+  outline: none;
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.06);
 }

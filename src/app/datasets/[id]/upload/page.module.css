@@ -6,39 +6,41 @@
 .main {
   margin-left: var(--sidebar-width);
   flex: 1;
-  padding: 32px 40px;
+  padding: 40px 48px;
+  max-width: 800px;
 }
 
 .topBar {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .topBar h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .backLink {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .dropZone {
   border: 2px dashed var(--color-border);
-  border-radius: 10px;
-  padding: 48px;
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
   text-align: center;
   margin-bottom: 24px;
-  transition: border-color 0.15s, background 0.15s;
+  transition: border-color var(--transition), background var(--transition);
   cursor: pointer;
 }
 
+.dropZone:hover,
 .dropZone.dragging {
-  border-color: var(--color-accent);
-  background: rgba(233, 69, 96, 0.04);
+  border-color: var(--color-text);
+  background: var(--color-bg-subtle);
 }
 
 .fileInput {
@@ -53,15 +55,16 @@
 
 .results {
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 20px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-xs);
 }
 
 .results h3 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .resultList {
@@ -76,23 +79,23 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   padding: 6px 0;
 }
 
 .errDot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-danger);
   flex-shrink: 0;
 }
 
 .okDot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: #27ae60;
+  background: var(--color-success);
   flex-shrink: 0;
 }
 
@@ -101,11 +104,13 @@
 }
 
 .errMsg {
-  color: var(--color-accent);
+  color: var(--color-danger);
 }
 
 .viewGallery {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

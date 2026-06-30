@@ -36,9 +36,9 @@ export default function Dashboard() {
         <div className={styles.topBar}><h1>Dashboard</h1></div>
 
         <div className={styles.quickActions}>
-          <Link href="/datasets/new" className={styles.actionCard}><h3>+ New Dataset</h3></Link>
-          <Link href="/datasets" className={styles.actionCard}><h3>Datasets</h3></Link>
-          <Link href="/settings" className={styles.actionCard}><h3>Settings</h3></Link>
+          <Link href="/datasets/new" className={styles.actionCard}>+ New Dataset</Link>
+          <Link href="/datasets" className={styles.actionCard}>Datasets</Link>
+          <Link href="/settings" className={styles.actionCard}>Settings</Link>
         </div>
 
         <section className={styles.section}>
@@ -46,7 +46,9 @@ export default function Dashboard() {
           {!summary ? (
             <p className={styles.loading}>Loading...</p>
           ) : summary.totalDatasets === 0 ? (
-            <div className={styles.empty}><p>No datasets yet. Create one to get started.</p></div>
+            <div className={styles.empty}>
+              <p>No datasets yet. Create one to get started.</p>
+            </div>
           ) : (
             <div className={styles.summaryGrid}>
               {cards.map((c) => (
@@ -69,7 +71,7 @@ export default function Dashboard() {
                 <h3>Environment</h3>
                 {envKeys.map(([key, ok]) => (
                   <div key={key} className={styles.readinessRow}>
-                    <span className={ok ? styles.ok : styles.fail}>{ok ? '✓' : '✗'}</span>
+                    <span className={ok ? styles.ok : styles.fail}>{ok ? '\u2713' : '\u2717'}</span>
                     <code>{key}</code>
                     <span className={styles.readinessStatus}>{ok ? 'configured' : 'missing'}</span>
                   </div>
@@ -79,14 +81,14 @@ export default function Dashboard() {
               <div className={styles.readinessGroup}>
                 <h3>Database</h3>
                 <div className={styles.readinessRow}>
-                  <span className={dbReachable ? styles.ok : styles.fail}>{dbReachable ? '✓' : '✗'}</span>
+                  <span className={dbReachable ? styles.ok : styles.fail}>{dbReachable ? '\u2713' : '\u2717'}</span>
                   <span>Supabase connection</span>
                   <span className={styles.readinessStatus}>{dbReachable ? 'reachable' : (diag.database?.error || 'unreachable')}</span>
                 </div>
                 {tables.map(([table, ok]) => (
                   <div key={table} className={styles.readinessRow}>
-                    <span className={ok ? styles.ok : styles.fail}>{ok ? '✓' : '✗'}</span>
-                    <code>table: {table}</code>
+                    <span className={ok ? styles.ok : styles.fail}>{ok ? '\u2713' : '\u2717'}</span>
+                    <code>{table}</code>
                     <span className={styles.readinessStatus}>{ok ? 'exists' : 'missing'}</span>
                   </div>
                 ))}
@@ -96,8 +98,8 @@ export default function Dashboard() {
                 <h3>Storage Buckets</h3>
                 {buckets.map(([bucket, ok]) => (
                   <div key={bucket} className={styles.readinessRow}>
-                    <span className={ok ? styles.ok : styles.fail}>{ok ? '✓' : '✗'}</span>
-                    <code>bucket: {bucket}</code>
+                    <span className={ok ? styles.ok : styles.fail}>{ok ? '\u2713' : '\u2717'}</span>
+                    <code>{bucket}</code>
                     <span className={styles.readinessStatus}>{ok ? 'exists' : 'missing'}</span>
                   </div>
                 ))}

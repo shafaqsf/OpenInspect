@@ -6,33 +6,37 @@
 .main {
   margin-left: var(--sidebar-width);
   flex: 1;
-  padding: 32px 40px;
+  padding: 40px 48px;
   max-width: 800px;
 }
 
 .topBar {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .topBar h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .backLink {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .scoreCard {
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 24px;
+  gap: 40px;
+  padding: 28px 32px;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  margin-bottom: 24px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 28px;
 }
 
 .score {
@@ -43,8 +47,8 @@
 }
 
 .scoreCircle {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   border: 3px solid;
   display: flex;
@@ -52,10 +56,11 @@
   justify-content: center;
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .scoreLabel {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-text-muted);
 }
@@ -63,44 +68,54 @@
 .counts {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .count {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
-.errorCount { color: #e94560; }
-.warningCount { color: #f39c12; }
+.errorCount { color: var(--color-danger); }
+.warningCount { color: var(--color-warning); }
 .infoCount { color: var(--color-text-muted); }
 
 .filterRow {
   display: flex;
   gap: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
 .filterRow button {
-  padding: 6px 14px;
+  padding: 7px 16px;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   font-size: 0.8rem;
-  background: var(--color-card-bg);
-  cursor: pointer;
+  font-weight: 500;
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  transition: all var(--transition);
+}
+
+.filterRow button:hover {
+  background: var(--color-bg-muted);
 }
 
 .filterRow button.active {
-  background: var(--color-sidebar-bg);
-  color: #fff;
-  border-color: var(--color-sidebar-bg);
+  background: var(--color-text);
+  color: var(--color-accent-text);
+  border-color: var(--color-text);
 }
 
 .noFindings {
   text-align: center;
-  padding: 40px;
+  padding: 48px;
   color: var(--color-text-muted);
+  font-size: 0.85rem;
+  background: var(--color-bg-subtle);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
 }
 
 .findingsList {
@@ -112,32 +127,38 @@
 .finding {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 12px 16px;
+  gap: 14px;
+  padding: 14px 18px;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
 }
 
 .severityBadge {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 4px;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 20px;
   flex-shrink: 0;
+  margin-top: 1px;
 }
 
-.error .severityBadge { background: #ffd0d0; color: #c0392b; }
-.warning .severityBadge { background: #fff3cd; color: #856404; }
-.info .severityBadge { background: #d0e8ff; color: #1565c0; }
+.error .severityBadge { background: var(--color-danger-bg); color: var(--color-danger); }
+.warning .severityBadge { background: var(--color-warning-bg); color: var(--color-warning); }
+.info .severityBadge { background: var(--color-info-bg); color: var(--color-info); }
 
 .findingCode {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-text-faint);
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  margin-bottom: 2px;
 }
 
 .findingMsg {
   font-size: 0.85rem;
+  color: var(--color-text-secondary);
 }

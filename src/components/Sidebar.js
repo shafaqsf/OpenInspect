@@ -24,7 +24,8 @@ export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.header}>
-        <h1 className={styles.logo}>OpenInspect</h1>
+        <div className={styles.logoMark}>OI</div>
+        <span className={styles.logo}>OpenInspect</span>
         <span className={styles.version}>v0.1</span>
       </div>
 

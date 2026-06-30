@@ -9,11 +9,12 @@
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
+  gap: 14px;
+  padding: 12px 16px;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
   flex-wrap: wrap;
 }
 
@@ -28,24 +29,29 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  width: 40px;
-  padding: 4px 0;
+  width: 42px;
+  padding: 5px 0;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background: transparent;
-  cursor: pointer;
-  color: var(--color-text);
-  transition: background 0.15s;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  transition: all var(--transition);
 }
 
 .toolBtn:hover {
-  background: #f0f0f0;
+  background: var(--color-bg-muted);
+  color: var(--color-text);
 }
 
 .toolActive {
-  background: var(--color-sidebar-active);
-  color: #fff;
-  border-color: var(--color-sidebar-active);
+  background: var(--color-text);
+  color: var(--color-accent-text);
+  border-color: var(--color-text);
+}
+
+.toolActive:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-accent-text);
 }
 
 .toolIcon {
@@ -53,9 +59,9 @@
 }
 
 .toolKey {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .labelGroup {
@@ -74,23 +80,24 @@
 .labelBtn {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
+  gap: 5px;
+  padding: 5px 12px;
   border: 2px solid var(--color-border);
-  border-radius: 6px;
-  font-size: 0.75rem;
-  background: transparent;
-  cursor: pointer;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: all var(--transition);
   white-space: nowrap;
-  transition: border-color 0.15s;
 }
 
 .labelBtn:hover {
-  background: #f5f5f5;
+  background: var(--color-bg-muted);
 }
 
 .labelActive {
-  background: rgba(233, 69, 96, 0.08);
+  border-color: var(--color-text);
+  font-weight: 600;
 }
 
 .labelDot {
@@ -107,11 +114,12 @@
 }
 
 .saveStatus {
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  color: var(--color-text-faint);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-right: 8px;
+  font-weight: 600;
+  margin-right: 10px;
 }
 
 .rightGroup button {
@@ -121,10 +129,15 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: transparent;
-  cursor: pointer;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
   font-size: 0.85rem;
+  transition: background var(--transition);
+}
+
+.rightGroup button:hover {
+  background: var(--color-bg-muted);
 }
 
 .metaInputs {
@@ -135,31 +148,36 @@
 
 .metaInput {
   flex: 1;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
-  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color var(--transition);
 }
 
 .metaInput:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.06);
 }
 
 .hint {
   grid-column: 1 / -1;
-  padding: 6px 14px;
-  background: var(--color-sidebar-bg);
-  color: var(--color-sidebar-text);
-  border-radius: 6px;
-  font-size: 0.8rem;
+  padding: 7px 16px;
+  background: var(--color-text);
+  color: var(--color-accent-text);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
   text-align: center;
+  font-weight: 500;
 }
 
 .canvasWrapper {
   grid-column: 1;
   background: #1a1a1a;
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -176,48 +194,50 @@
 .sidebar {
   grid-column: 2;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 16px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px;
   max-height: 70vh;
   overflow-y: auto;
+  box-shadow: var(--shadow-xs);
 }
 
 .sidebar h3 {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  margin-bottom: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
 }
 
 .sidebar h3:not(:first-child) {
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .annList {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .annItem {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 8px;
-  border-radius: 4px;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: background var(--transition);
 }
 
 .annItem:hover {
-  background: #f0f0f0;
+  background: var(--color-bg-muted);
 }
 
 .annSelected {
-  background: rgba(233, 69, 96, 0.08);
+  background: var(--color-border-light);
 }
 
 .annDot {
@@ -229,9 +249,10 @@
 
 .annType {
   font-weight: 600;
-  color: var(--color-text-muted);
-  font-size: 0.7rem;
+  color: var(--color-text-faint);
+  font-size: 0.68rem;
   text-transform: uppercase;
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 }
 
 .annLabel {
@@ -239,6 +260,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .annDelete {
@@ -249,29 +271,29 @@
   justify-content: center;
   border: none;
   background: transparent;
-  cursor: pointer;
-  color: var(--color-text-muted);
+  color: var(--color-text-faint);
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
 }
 
 .annDelete:hover {
-  background: #f0f0f0;
-  color: var(--color-accent);
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
 }
 
 .classInfo {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 8px;
+  gap: 8px;
+  padding: 7px 10px;
   font-size: 0.8rem;
 }
 
 .noClass {
   font-size: 0.8rem;
-  color: var(--color-text-muted);
-  padding: 6px 8px;
+  color: var(--color-text-faint);
+  padding: 7px 10px;
 }
 
 .shortcutList {
@@ -283,9 +305,10 @@
 .shortcutRow {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  padding: 2px 0;
+  gap: 10px;
+  font-size: 0.76rem;
+  padding: 3px 0;
+  color: var(--color-text-secondary);
 }
 
 .shortcutRow code {
@@ -294,7 +317,8 @@
   text-align: center;
   font-size: 0.7rem;
   padding: 2px 4px;
-  background: #f0f0f0;
-  border-radius: 3px;
-  font-weight: 600;
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 }

@@ -6,22 +6,25 @@
 .main {
   margin-left: var(--sidebar-width);
   flex: 1;
-  padding: 32px 40px;
-  max-width: 700px;
+  padding: 40px 48px;
+  max-width: 720px;
 }
 
 .topBar {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .topBar h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .backLink {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .formatList {
@@ -34,29 +37,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 22px 24px;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.formatCard:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border);
 }
 
 .formatInfo h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .formatInfo p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted);
 }
 
 .exportBtn {
-  padding: 10px 20px;
-  background: var(--color-accent);
-  color: #fff;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  padding: 10px 22px;
+  background: var(--color-text);
+  color: var(--color-accent-text);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
   font-weight: 600;
   flex-shrink: 0;
+  transition: background var(--transition);
+}
+
+.exportBtn:hover {
+  background: var(--color-accent-hover);
 }
